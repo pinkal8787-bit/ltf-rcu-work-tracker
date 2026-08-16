@@ -4,31 +4,157 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>L&T Finance • RCU Work Tracker</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f5f7;color:#17202a}
-header{background:#152238;color:#fff;padding:16px 18px}
-.brand{font-size:21px;font-weight:700}
-.sub{font-size:12px;opacity:.8;margin-top:4px}
-.wrap{max-width:1200px;margin:auto;padding:16px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.card,.panel{background:#fff;border-radius:12px;padding:16px;margin-top:16px;box-shadow:0 2px 10px #00000012}
-.num{font-size:28px;font-weight:700;margin-top:5px}
-.blue{color:#2563a8}.green{color:#159447}.yellow{color:#b77900}.red{color:#d63031}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-input,select,button{width:100%;padding:11px;border:1px solid #cfd5db;border-radius:8px;font-size:14px}
-button{background:#152238;color:#fff;border:0;font-weight:700;cursor:pointer}
-.greenbtn{background:#159447}.bluebtn{background:#2563a8}.redbtn{background:#d63031}
-table{width:100%;border-collapse:collapse;margin-top:14px}
-th,td{padding:10px 8px;border-bottom:1px solid #e9ecef;text-align:left;font-size:13px;vertical-align:top}
-th{background:#f7f8fa}
-.badge{display:inline-block;padding:5px 8px;border-radius:20px;font-size:11px;font-weight:700}
-.bg{background:#dff5e7;color:#11713a}.by{background:#fff0c9;color:#8a5b00}.br{background:#ffe0e0;color:#a51f1f}
-.hide{display:none}.msg{margin-top:10px;color:#b00020}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f3f5f7;
+color:#17202a
+}
+
+header{
+background:#152238;
+color:#fff;
+padding:16px 18px
+}
+
+.brand{
+font-size:21px;
+font-weight:700
+}
+
+.sub{
+font-size:12px;
+opacity:.8;
+margin-top:4px
+}
+
+.wrap{
+max-width:1200px;
+margin:auto;
+padding:16px
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px
+}
+
+.card,.panel{
+background:#fff;
+border-radius:12px;
+padding:16px;
+margin-top:16px;
+box-shadow:0 2px 10px #00000012
+}
+
+.num{
+font-size:28px;
+font-weight:700;
+margin-top:5px
+}
+
+.blue{color:#2563a8}
+.green{color:#159447}
+.yellow{color:#b77900}
+.red{color:#d63031}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px
+}
+
+input,select,button{
+width:100%;
+padding:11px;
+border:1px solid #cfd5db;
+border-radius:8px;
+font-size:14px
+}
+
+button{
+background:#152238;
+color:#fff;
+border:0;
+font-weight:700;
+cursor:pointer
+}
+
+.greenbtn{background:#159447}
+.bluebtn{background:#2563a8}
+.redbtn{background:#d63031}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:14px
+}
+
+th,td{
+padding:10px 8px;
+border-bottom:1px solid #e9ecef;
+text-align:left;
+font-size:13px;
+vertical-align:top
+}
+
+th{
+background:#f7f8fa
+}
+
+.badge{
+display:inline-block;
+padding:5px 8px;
+border-radius:20px;
+font-size:11px;
+font-weight:700
+}
+
+.bg{
+background:#dff5e7;
+color:#11713a
+}
+
+.by{
+background:#fff0c9;
+color:#8a5b00
+}
+
+.br{
+background:#ffe0e0;
+color:#a51f1f
+}
+
+.hide{
+display:none
+}
+
+.msg{
+margin-top:10px;
+color:#b00020
+}
+
 @media(max-width:800px){
-.cards{grid-template-columns:1fr 1fr}
-.grid{grid-template-columns:1fr}
-table{display:block;overflow:auto;white-space:nowrap}
+
+.cards{
+grid-template-columns:1fr 1fr
+}
+
+.grid{
+grid-template-columns:1fr
+}
+
+table{
+display:block;
+overflow:auto;
+white-space:nowrap
+}
+
 }
 </style>
 </head>
@@ -36,30 +162,58 @@ table{display:block;overflow:auto;white-space:nowrap}
 <body>
 
 <header>
-<div class="brand">L&T Finance • RCU Work Tracker</div>
-<div class="sub">Risk Manager Dashboard • Prince Pandey</div>
+
+<div class="brand">
+L&T Finance • RCU Work Tracker
+</div>
+
+<div class="sub">
+Risk Manager Dashboard • Prince Pandey
+</div>
+
 </header>
 
 <div class="wrap">
 
 <div class="card" id="login">
+
 <h2>Login</h2>
-<input id="uid" placeholder="CRM Email / Employee ID">
+
+<input
+id="uid"
+placeholder="CRM Email / Employee ID"
+>
+
 <br><br>
-<input id="pw" type="password" placeholder="Password">
+
+<input
+id="pw"
+type="password"
+placeholder="Password"
+>
+
 <br><br>
-<button id="go">Login</button>
+
+<button id="go">
+Login
+</button>
+
 <p id="err" class="msg"></p>
+
 </div>
 
 <div id="main" class="hide"></div>
 
 </div>
 
+
 <script type="module">
 
-import {initializeApp}
+import {
+initializeApp
+}
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+
 
 import {
 getAuth,
@@ -69,8 +223,9 @@ signOut
 }
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
+
 import {
-getFirestore,
+initializeFirestore,
 doc,
 getDoc,
 collection,
@@ -86,73 +241,155 @@ from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
 
 const firebaseConfig={
+
 apiKey:"AIzaSyC25Iz4o4Af9OyD02lYIZU7PWLOuWNMCIY",
+
 authDomain:"ltf-rcu-work-tracker.firebaseapp.com",
+
 projectId:"ltf-rcu-work-tracker",
+
 storageBucket:"ltf-rcu-work-tracker.firebasestorage.app",
+
 messagingSenderId:"665554297157",
+
 appId:"1:665554297157:web:fea3a569990fb12f145e2c",
+
 measurementId:"G-HVL8F5VFXW"
+
 };
 
+
 const app=initializeApp(firebaseConfig);
+
 const auth=getAuth(app);
-const db=getFirestore(app);
+
+
+/*
+IMPORTANT FIX:
+Firestore को normal WebChannel की जगह
+long-polling transport से connect कराया गया है.
+*/
+
+const db=initializeFirestore(
+app,
+{
+experimentalForceLongPolling:true
+}
+);
+
 
 const $=id=>document.getElementById(id);
 
-const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({
+
+const esc=s=>
+String(s??"").replace(
+/[&<>"']/g,
+m=>({
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#39;"
-}[m]));
+}[m])
+);
+
 
 function today(){
-return new Date().toISOString().slice(0,10);
+
+return new Date()
+.toISOString()
+.slice(0,10);
+
 }
+
 
 function statusOf(x){
-if(x.status==="Completed") return "Completed";
-if(x.due<today()) return "Overdue";
+
+if(x.status==="Completed")
+return "Completed";
+
+if(x.due<today())
+return "Overdue";
+
 return "Pending";
+
 }
+
 
 function loginEmail(v){
+
 return v.includes("@")
 ?v
-:v.toLowerCase().replace(/[^a-z0-9]/g,"")+"@ltf-rcu.local";
+:v.toLowerCase()
+.replace(/[^a-z0-9]/g,"")
++"@ltf-rcu.local";
+
 }
 
+
+/* START USER */
 
 async function start(user){
 
-const snap=await getDoc(doc(db,"users",user.uid));
+try{
+
+const snap=await getDoc(
+doc(db,"users",user.uid)
+);
 
 if(!snap.exists()){
-throw Error("Firestore users profile नहीं मिला।");
+
+throw Error(
+"Firestore users profile नहीं मिला।"
+);
+
 }
 
-const me={uid:user.uid,...snap.data()};
 
-$("login").classList.add("hide");
+const me={
+uid:user.uid,
+...snap.data()
+};
 
-$("main").classList.remove("hide");
+
+$("login")
+.classList.add("hide");
+
+
+$("main")
+.classList.remove("hide");
+
 
 $("main").innerHTML=
 me.role==="crm"
 ?crmView()
 :employeeView(me);
 
+
 if(me.role==="crm"){
+
 await loadCRM();
+
 }else{
+
 await loadEmployee(me);
-}
 
 }
 
+}catch(e){
+
+console.error(e);
+
+$("err").textContent=
+"Failed to get document: "
++e.message;
+
+}
+
+}
+
+
+/* CRM VIEW */
 
 function crmView(){
 
@@ -161,43 +398,93 @@ return`
 <div class="cards">
 
 <div class="card">
+
 Total Work
-<div class="num blue" id="total">0</div>
+
+<div
+class="num blue"
+id="total"
+>
+0
 </div>
 
+</div>
+
+
 <div class="card">
+
 Completed
-<div class="num green" id="done">0</div>
+
+<div
+class="num green"
+id="done"
+>
+0
 </div>
 
+</div>
+
+
 <div class="card">
+
 Pending
-<div class="num yellow" id="pending">0</div>
+
+<div
+class="num yellow"
+id="pending"
+>
+0
 </div>
+
+</div>
+
 
 <div class="card">
+
 TAT Crossed
-<div class="num red" id="overdue">0</div>
+
+<div
+class="num red"
+id="overdue"
+>
+0
 </div>
 
 </div>
+
+</div>
+
 
 <div class="panel">
 
-<h3>Team</h3>
+<h3>
+Team
+</h3>
 
 <table>
+
 <thead>
+
 <tr>
+
 <th>Name</th>
+
 <th>Designation</th>
+
 <th>Assigned</th>
+
 <th>Completed</th>
+
 <th>Pending</th>
+
 </tr>
+
 </thead>
 
-<tbody id="teamRows"></tbody>
+<tbody
+id="teamRows"
+>
+</tbody>
 
 </table>
 
@@ -206,25 +493,54 @@ TAT Crossed
 
 <div class="panel">
 
-<h3>नया Work Assign करें</h3>
+<h3>
+नया Work Assign करें
+</h3>
+
 
 <div class="grid">
 
-<input id="work" placeholder="Work / Client / Task">
+
+<input
+id="work"
+placeholder="Work / Client / Task"
+>
+
 
 <select id="member">
-<option value="">Select Employee</option>
+
+<option value="">
+Select Employee
+</option>
+
 </select>
 
-<input id="due" type="date">
 
-<input id="email" placeholder="Employee Email (optional)">
+<input
+id="due"
+type="date"
+>
 
-<input id="remarks" placeholder="Remarks / Instruction">
 
-<button id="assign">Work Assign करें</button>
+<input
+id="email"
+placeholder="Employee Email (optional)"
+>
+
+
+<input
+id="remarks"
+placeholder="Remarks / Instruction"
+>
+
+
+<button id="assign">
+Work Assign करें
+</button>
+
 
 </div>
+
 
 <p id="crmMsg"></p>
 
@@ -233,52 +549,96 @@ TAT Crossed
 
 <div class="panel">
 
-<h3>Work List</h3>
+<h3>
+Work List
+</h3>
+
 
 <div class="grid">
 
+
 <select id="filterMember">
-<option value="">सभी Team Members</option>
+
+<option value="">
+सभी Team Members
+</option>
+
 </select>
+
 
 <select id="filterStatus">
-<option value="">सभी Status</option>
-<option>Pending</option>
-<option>Completed</option>
-<option>Overdue</option>
+
+<option value="">
+सभी Status
+</option>
+
+<option>
+Pending
+</option>
+
+<option>
+Completed
+</option>
+
+<option>
+Overdue
+</option>
+
 </select>
 
-<input id="search" placeholder="Work / Client Search">
+
+<input
+id="search"
+placeholder="Work / Client Search"
+>
+
 
 </div>
+
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Work</th>
+
 <th>Assigned To</th>
+
 <th>Due Date</th>
+
 <th>Remarks</th>
+
 <th>Status</th>
+
 <th>Action</th>
+
 </tr>
+
 </thead>
 
-<tbody id="rows"></tbody>
+
+<tbody id="rows">
+</tbody>
 
 </table>
 
 </div>
 
+
 <br>
 
-<button id="logout">Logout</button>
+<button id="logout">
+Logout
+</button>
 
 `;
 
 }
 
+
+/* EMPLOYEE VIEW */
 
 function employeeView(me){
 
@@ -286,37 +646,59 @@ return`
 
 <div class="panel">
 
-<h2>${esc(me.name||"Employee")}</h2>
+<h2>
+${esc(me.name||"Employee")}
+</h2>
 
-<p>Employee ID: ${esc(me.employeeId||"-")}</p>
+<p>
+Employee ID:
+${esc(me.employeeId||"-")}
+</p>
 
 </div>
 
+
 <div class="panel">
 
-<h3>My Assigned Work</h3>
+<h3>
+My Assigned Work
+</h3>
+
 
 <table>
 
 <thead>
+
 <tr>
+
 <th>Work</th>
+
 <th>CRM</th>
+
 <th>TAT</th>
+
 <th>Status</th>
+
 <th>Action</th>
+
 </tr>
+
 </thead>
 
-<tbody id="rows"></tbody>
+
+<tbody id="rows">
+</tbody>
 
 </table>
 
 </div>
 
+
 <br>
 
-<button id="logout">Logout</button>
+<button id="logout">
+Logout
+</button>
 
 `;
 
@@ -326,77 +708,148 @@ return`
 let works=[];
 
 
+/* CRM LOAD */
+
 async function loadCRM(){
 
-const users=await getDocs(collection(db,"users"));
+try{
 
-const employees=users.docs
-.map(x=>({uid:x.id,...x.data()}))
-.filter(x=>x.role==="employee");
+const users=
+await getDocs(
+collection(db,"users")
+);
 
-$("member").innerHTML=employees.length
-?employees.map(x=>
+
+const employees=
+users.docs
+.map(x=>({
+uid:x.id,
+...x.data()
+}))
+.filter(
+x=>x.role==="employee"
+);
+
+
+$("member").innerHTML=
+employees.length
+
+?
+
+employees.map(x=>
+
 `<option value="${x.uid}">
-${esc(x.name)} (${esc(x.employeeId||"")})
+${esc(x.name)}
+(${esc(x.employeeId||"")})
 </option>`
+
 ).join("")
-:`<option value="">No employee found</option>`;
+
+:
+
+`<option value="">
+No employee found
+</option>`;
 
 
 $("filterMember").innerHTML=
-`<option value="">सभी Team Members</option>`+
+
+`<option value="">
+सभी Team Members
+</option>`
+
++
+
 employees.map(x=>
+
 `<option value="${x.name}">
 ${esc(x.name)}
 </option>`
+
 ).join("");
 
 
-const ws=await getDocs(collection(db,"work"));
+const ws=
+await getDocs(
+collection(db,"work")
+);
 
-works=ws.docs.map(x=>({id:x.id,...x.data()}));
+
+works=
+ws.docs.map(
+x=>({
+id:x.id,
+...x.data()
+})
+);
+
 
 drawCRM();
 
 
-$("assign").onclick=async()=>{
+$("assign").onclick=
+async()=>{
 
-const emp=employees.find(
+try{
+
+const emp=
+employees.find(
 x=>x.uid===$("member").value
 );
 
-if(!$("work").value.trim()||!emp||!$("due").value){
+
+if(
+!$("work").value.trim()
+||
+!emp
+||
+!$("due").value
+){
 
 $("crmMsg").textContent=
 "Work, Employee और Due Date जरूरी हैं।";
 
 return;
+
 }
 
 
-await addDoc(collection(db,"work"),{
+await addDoc(
+collection(db,"work"),
+{
 
-work:$("work").value.trim(),
+work:
+$("work").value.trim(),
 
-assignedUid:emp.uid,
+assignedUid:
+emp.uid,
 
-employeeName:emp.name,
+employeeName:
+emp.name,
 
-employeeId:emp.employeeId||"",
+employeeId:
+emp.employeeId||"",
 
-email:$("email").value.trim(),
+email:
+$("email").value.trim(),
 
-crmName:"Vishal Singh",
+crmName:
+"Vishal Singh",
 
-due:$("due").value,
+due:
+$("due").value,
 
-note:$("remarks").value.trim(),
+note:
+$("remarks").value.trim(),
 
-status:"Pending",
+status:
+"Pending",
 
-createdAt:serverTimestamp()
+createdAt:
+serverTimestamp()
 
-});
+}
+);
 
 
 $("crmMsg").textContent=
@@ -404,138 +857,292 @@ $("crmMsg").textContent=
 
 
 $("work").value="";
+
 $("email").value="";
+
 $("remarks").value="";
 
 
-const ws2=await getDocs(collection(db,"work"));
+const ws2=
+await getDocs(
+collection(db,"work")
+);
 
-works=ws2.docs.map(x=>({id:x.id,...x.data()}));
+
+works=
+ws2.docs.map(
+x=>({
+id:x.id,
+...x.data()
+})
+);
+
 
 drawCRM();
+
+
+}catch(e){
+
+console.error(e);
+
+$("crmMsg").textContent=
+"Error: "+e.message;
+
+}
 
 };
 
 
-$("filterMember").onchange=drawCRM;
-$("filterStatus").onchange=drawCRM;
-$("search").oninput=drawCRM;
+$("filterMember").onchange=
+drawCRM;
 
-$("logout").onclick=()=>signOut(auth);
+
+$("filterStatus").onchange=
+drawCRM;
+
+
+$("search").oninput=
+drawCRM;
+
+
+$("logout").onclick=
+()=>signOut(auth);
 
 }
 
 
+/* CRM DRAW */
+
 function drawCRM(){
 
-$("total").textContent=works.length;
+$("total").textContent=
+works.length;
+
 
 $("done").textContent=
-works.filter(x=>statusOf(x)==="Completed").length;
+works.filter(
+x=>statusOf(x)==="Completed"
+).length;
+
 
 $("pending").textContent=
-works.filter(x=>statusOf(x)==="Pending").length;
+works.filter(
+x=>statusOf(x)==="Pending"
+).length;
+
 
 $("overdue").textContent=
-works.filter(x=>statusOf(x)==="Overdue").length;
+works.filter(
+x=>statusOf(x)==="Overdue"
+).length;
 
 
 const members={};
 
+
 works.forEach(x=>{
 
-const n=x.employeeName||"Unknown";
+const n=
+x.employeeName||"Unknown";
 
-if(!members[n])
+
+if(!members[n]){
+
 members[n]={
 assigned:0,
 completed:0,
 pending:0
 };
 
+}
+
+
 members[n].assigned++;
 
-if(statusOf(x)==="Completed")
+
+if(
+statusOf(x)==="Completed"
+)
 members[n].completed++;
 
-if(statusOf(x)==="Pending")
+
+if(
+statusOf(x)==="Pending"
+)
 members[n].pending++;
 
 });
 
 
 $("teamRows").innerHTML=
-Object.entries(members).map(([name,x])=>
+
+Object.entries(members)
+
+.map(
+([name,x])=>
+
 `<tr>
-<td><b>${esc(name)}</b></td>
-<td>Employee</td>
-<td>${x.assigned}</td>
-<td class="green">${x.completed}</td>
-<td class="yellow">${x.pending}</td>
+
+<td>
+<b>
+${esc(name)}
+</b>
+</td>
+
+<td>
+Employee
+</td>
+
+<td>
+${x.assigned}
+</td>
+
+<td class="green">
+${x.completed}
+</td>
+
+<td class="yellow">
+${x.pending}
+</td>
+
 </tr>`
+
 ).join("");
 
 
-const fm=$("filterMember").value;
-const fs=$("filterStatus").value;
-const q=$("search").value.toLowerCase();
+const fm=
+$("filterMember").value;
 
 
-const list=works.filter(x=>
-(!fm||x.employeeName===fm)&&
-(!fs||statusOf(x)===fs)&&
+const fs=
+$("filterStatus").value;
+
+
+const q=
+$("search").value.toLowerCase();
+
+
+const list=
+works.filter(x=>
+
+(!fm||
+x.employeeName===fm)
+
+&&
+
+(!fs||
+statusOf(x)===fs)
+
+&&
+
 (!q||
-(x.work+" "+x.employeeName+" "+(x.note||""))
+
+(
+x.work
++" "
++x.employeeName
++" "
++(x.note||"")
+)
 .toLowerCase()
-.includes(q))
-);
+.includes(q)
+
+));
 
 
-$("rows").innerHTML=list.length
+$("rows").innerHTML=
 
-?list.map(x=>{
+list.length
 
-const s=statusOf(x);
+?
+
+list.map(x=>{
+
+const s=
+statusOf(x);
+
 
 const cls=
-s==="Completed"?"bg":
-s==="Overdue"?"br":"by";
+s==="Completed"
+?"bg"
+:
+s==="Overdue"
+?"br"
+:
+"by";
+
 
 return`
 
 <tr>
 
-<td><b>${esc(x.work)}</b></td>
-
-<td>${esc(x.employeeName)}</td>
-
-<td>${esc(x.due)}</td>
-
-<td>${esc(x.note||"")}</td>
-
 <td>
-<span class="badge ${cls}">
-${s}
-</span>
+
+<b>
+${esc(x.work)}
+</b>
+
 </td>
 
+
 <td>
+${esc(x.employeeName)}
+</td>
+
+
+<td>
+${esc(x.due)}
+</td>
+
+
+<td>
+${esc(x.note||"")}
+</td>
+
+
+<td>
+
+<span
+class="badge ${cls}"
+>
+${s}
+</span>
+
+</td>
+
+
+<td>
+
 
 ${
 s!=="Completed"
-?`<button class="greenbtn"
-onclick="completeWork('${x.id}')">
+
+?
+
+`<button
+class="greenbtn"
+onclick="completeWork('${x.id}')"
+>
 ✓ Complete
 </button>`
-:"✓ Done"
+
+:
+
+"✓ Done"
+
 }
+
 
 <br><br>
 
-<button class="redbtn"
-onclick="deleteWork('${x.id}')">
+
+<button
+class="redbtn"
+onclick="deleteWork('${x.id}')"
+>
 Delete
 </button>
+
 
 </td>
 
@@ -545,61 +1152,118 @@ Delete
 
 }).join("")
 
-:`<tr>
+:
+
+`<tr>
+
 <td colspan="6">
+
 अभी कोई work नहीं है।
+
 </td>
+
 </tr>`;
 
 }
 
 
+/* EMPLOYEE LOAD */
+
 async function loadEmployee(me){
 
-const q=await getDocs(
+try{
+
+const q=
+await getDocs(
 query(
 collection(db,"work"),
-where("assignedUid","==",me.uid)
+where(
+"assignedUid",
+"==",
+me.uid
+)
 )
 );
 
-works=q.docs.map(x=>({id:x.id,...x.data()}));
+
+works=
+q.docs.map(
+x=>({
+id:x.id,
+...x.data()
+})
+);
 
 
-$("rows").innerHTML=works.map(x=>{
+$("rows").innerHTML=
 
-const s=statusOf(x);
+works.map(x=>{
+
+const s=
+statusOf(x);
+
 
 const cls=
-s==="Completed"?"bg":
-s==="Overdue"?"br":"by";
+s==="Completed"
+?"bg"
+:
+s==="Overdue"
+?"br"
+:
+"by";
+
 
 return`
 
 <tr>
 
-<td>${esc(x.work)}</td>
-
-<td>${esc(x.crmName||"Vishal Singh")}</td>
-
-<td>${esc(x.due)}</td>
-
 <td>
-<span class="badge ${cls}">
-${s}
-</span>
+${esc(x.work)}
 </td>
 
+
 <td>
+${esc(x.crmName||"Vishal Singh")}
+</td>
+
+
+<td>
+${esc(x.due)}
+</td>
+
+
+<td>
+
+<span
+class="badge ${cls}"
+>
+${s}
+</span>
+
+</td>
+
+
+<td>
+
 
 ${
 s!=="Completed"
-?`<button class="greenbtn"
-onclick="completeWork('${x.id}')">
+
+?
+
+`<button
+class="greenbtn"
+onclick="completeWork('${x.id}')"
+>
 ✓ Complete
 </button>`
-:"✓ Done"
+
+:
+
+"✓ Done"
+
 }
+
 
 </td>
 
@@ -610,70 +1274,176 @@ onclick="completeWork('${x.id}')">
 }).join("");
 
 
-$("logout").onclick=()=>signOut(auth);
+$("logout").onclick=
+()=>signOut(auth);
 
-}
-
-
-window.completeWork=async id=>{
-
-await updateDoc(
-doc(db,"work",id),
-{
-status:"Completed",
-completedAt:serverTimestamp()
-}
-);
-
-location.reload();
-
-};
-
-
-window.deleteWork=async id=>{
-
-if(!confirm("यह work delete करें?"))
-return;
-
-await deleteDoc(
-doc(db,"work",id)
-);
-
-location.reload();
-
-};
-
-
-$("go").onclick=async()=>{
-
-$("err").textContent="";
-
-try{
-
-await signInWithEmailAndPassword(
-auth,
-loginEmail($("uid").value.trim()),
-$("pw").value
-);
 
 }catch(e){
 
+console.error(e);
+
 $("err").textContent=
-"Login failed: "+e.message;
+"Failed to load work: "
++e.message;
+
+}
+
+}
+
+
+/* COMPLETE */
+
+window.completeWork=
+async id=>{
+
+try{
+
+await updateDoc(
+
+doc(
+db,
+"work",
+id
+),
+
+{
+status:"Completed",
+completedAt:
+serverTimestamp()
+}
+
+);
+
+
+location.reload();
+
+
+}catch(e){
+
+alert(
+"Error: "+e.message
+);
 
 }
 
 };
 
 
-onAuthStateChanged(auth,user=>{
+/* DELETE */
+
+window.deleteWork=
+async id=>{
+
+if(
+!confirm(
+"यह work delete करें?"
+)
+)
+return;
+
+
+try{
+
+await deleteDoc(
+
+doc(
+db,
+"work",
+id
+)
+
+);
+
+
+location.reload();
+
+
+}catch(e){
+
+alert(
+"Error: "+e.message
+);
+
+}
+
+};
+
+
+/* LOGIN */
+
+$("go").onclick=
+async()=>{
+
+$("err").textContent="";
+
+
+const email=
+$("uid").value.trim();
+
+
+const password=
+$("pw").value;
+
+
+if(!email||!password){
+
+$("err").textContent=
+"Email और Password दोनों भरें।";
+
+return;
+
+}
+
+
+try{
+
+$("go").textContent=
+"Logging in...";
+
+
+$("go").disabled=
+true;
+
+
+await signInWithEmailAndPassword(
+auth,
+loginEmail(email),
+password
+);
+
+
+}catch(e){
+
+console.error(e);
+
+$("err").textContent=
+"Login failed: "
++e.code
++" | "
++e.message;
+
+
+$("go").textContent=
+"Login";
+
+
+$("go").disabled=
+false;
+
+}
+
+};
+
+
+/* AUTH STATE */
+
+onAuthStateChanged(
+auth,
+user=>{
 
 if(user){
 
-start(user)
-.catch(e=>{
-$("err").textContent=e.message;
-});
+start(user);
 
 }
 
