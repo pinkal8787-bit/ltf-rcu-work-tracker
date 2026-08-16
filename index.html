@@ -6,154 +6,239 @@
 <title>L&T Finance • RCU Work Tracker</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f3f5f7;
-color:#17202a
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f5f7;
+  color:#17202a;
 }
 
 header{
-background:#152238;
-color:#fff;
-padding:16px 18px
+  background:#152238;
+  color:white;
+  padding:18px;
 }
 
 .brand{
-font-size:21px;
-font-weight:700
+  font-size:24px;
+  font-weight:700;
 }
 
 .sub{
-font-size:12px;
-opacity:.8;
-margin-top:4px
+  margin-top:5px;
+  font-size:14px;
+  opacity:.85;
 }
 
 .wrap{
-max-width:1200px;
-margin:auto;
-padding:16px
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px
+  max-width:1200px;
+  margin:auto;
+  padding:18px;
 }
 
 .card,.panel{
-background:#fff;
-border-radius:12px;
-padding:16px;
-margin-top:16px;
-box-shadow:0 2px 10px #00000012
+  background:white;
+  border-radius:14px;
+  padding:18px;
+  margin-top:18px;
+  box-shadow:0 2px 12px #00000012;
 }
 
-.num{
-font-size:28px;
-font-weight:700;
-margin-top:5px
+.login-card{
+  max-width:650px;
+  margin:55px auto;
 }
 
-.blue{color:#2563a8}
-.green{color:#159447}
-.yellow{color:#b77900}
-.red{color:#d63031}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px
+h2,h3{
+  margin-top:0;
 }
 
-input,select,button{
-width:100%;
-padding:11px;
-border:1px solid #cfd5db;
-border-radius:8px;
-font-size:14px
+input,select,button,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd3da;
+  border-radius:8px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
 }
 
 button{
-background:#152238;
-color:#fff;
-border:0;
-font-weight:700;
-cursor:pointer
+  background:#152238;
+  color:white;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
 }
 
-.greenbtn{background:#159447}
-.redbtn{background:#d63031}
+button:disabled{
+  opacity:.6;
+}
+
+.greenbtn{
+  background:#159447;
+}
+
+.bluebtn{
+  background:#2563a8;
+}
+
+.redbtn{
+  background:#d63031;
+}
+
+.graybtn{
+  background:#697586;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.num{
+  font-size:30px;
+  font-weight:700;
+  margin-top:8px;
+}
+
+.blue{
+  color:#2563a8;
+}
+
+.green{
+  color:#159447;
+}
+
+.yellow{
+  color:#b77900;
+}
+
+.red{
+  color:#d63031;
+}
 
 table{
-width:100%;
-border-collapse:collapse;
-margin-top:14px
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
 }
 
 th,td{
-padding:10px 8px;
-border-bottom:1px solid #e9ecef;
-text-align:left;
-font-size:13px;
-vertical-align:top
+  padding:11px 8px;
+  border-bottom:1px solid #e6e9ed;
+  text-align:left;
+  font-size:13px;
+  vertical-align:top;
 }
 
 th{
-background:#f7f8fa
+  background:#f7f8fa;
 }
 
 .badge{
-display:inline-block;
-padding:5px 8px;
-border-radius:20px;
-font-size:11px;
-font-weight:700
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
 }
 
 .bg{
-background:#dff5e7;
-color:#11713a
+  background:#dff5e7;
+  color:#11713a;
 }
 
 .by{
-background:#fff0c9;
-color:#8a5b00
+  background:#fff0c9;
+  color:#8a5b00;
 }
 
 .br{
-background:#ffe0e0;
-color:#a51f1f
-}
-
-.hide{
-display:none
+  background:#ffe0e0;
+  color:#a51f1f;
 }
 
 .msg{
-margin-top:10px;
-color:#b00020
+  margin-top:12px;
+  color:#b00020;
+  font-weight:600;
+}
+
+.success{
+  color:#159447;
+}
+
+.hide{
+  display:none;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.small{
+  font-size:12px;
+  color:#697586;
+}
+
+.action-buttons{
+  display:flex;
+  gap:6px;
+}
+
+.action-buttons button{
+  width:auto;
+  padding:8px 10px;
+}
+
+.empty{
+  text-align:center;
+  padding:25px;
+  color:#777;
 }
 
 @media(max-width:800px){
 
-.cards{
-grid-template-columns:1fr 1fr
-}
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
 
-.grid{
-grid-template-columns:1fr
-}
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-table{
-display:block;
-overflow:auto;
-white-space:nowrap
-}
+  .brand{
+    font-size:20px;
+  }
 
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .login-card{
+    margin:25px auto;
+  }
 }
 </style>
 </head>
@@ -161,668 +246,604 @@ white-space:nowrap
 <body>
 
 <header>
-<div class="brand">L&T Finance • RCU Work Tracker</div>
-<div class="sub">Risk Manager Dashboard • Prince Pandey</div>
+  <div class="brand">L&T Finance • RCU Work Tracker</div>
+  <div class="sub">Risk Manager Dashboard • Prince Pandey</div>
 </header>
 
 <div class="wrap">
 
-<div class="card" id="login">
+  <!-- LOGIN -->
+  <div id="login" class="card login-card">
 
-<h2>Login</h2>
+    <h2>Login</h2>
 
-<input
-id="uid"
-placeholder="CRM Email / Employee ID"
->
+    <input
+      id="uid"
+      placeholder="CRM Email / Employee ID"
+      autocomplete="username"
+    >
 
-<br><br>
+    <br><br>
 
-<input
-id="pw"
-type="password"
-placeholder="Password"
->
+    <input
+      id="pw"
+      type="password"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
 
-<br><br>
+    <br><br>
 
-<button id="go">
-Login
-</button>
+    <button id="go">Login</button>
 
-<p id="err" class="msg"></p>
+    <p id="err" class="msg"></p>
+
+  </div>
+
+
+  <!-- MAIN APP -->
+  <div id="main" class="hide"></div>
 
 </div>
 
-<div id="main" class="hide"></div>
 
-</div>
+<script type="module">
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC25Iz4o4Af9OyD02lYIZU7PWLOuWNMCIY",
+  authDomain: "ltf-rcu-work-tracker.firebaseapp.com",
+  projectId: "ltf-rcu-work-tracker",
+  storageBucket: "ltf-rcu-work-tracker.firebasestorage.app",
+  messagingSenderId: "665554297157",
+  appId: "1:665554297157:web:fea3a569990fb12f145e2c",
+  measurementId: "G-HVL8F5VFXW"
+};
+
+const PROJECT_ID = firebaseConfig.projectId;
 
 
-<script>
-
-const API_KEY =
-"AIzaSyC25Iz4o4Af9OyD02lYIZU7PWLOuWNMCIY";
-
-
-const PROJECT_ID =
-"ltf-rcu-work-tracker";
-
+/* =====================================================
+   FIREBASE AUTH REST
+===================================================== */
 
 const AUTH_URL =
 "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
-+API_KEY;
++ firebaseConfig.apiKey;
 
 
-const FIRESTORE =
+/* =====================================================
+   FIRESTORE REST
+===================================================== */
+
+const FIRESTORE_BASE =
 "https://firestore.googleapis.com/v1/projects/"
-+PROJECT_ID
-+"/databases/(default)/documents";
++ PROJECT_ID
++ "/databases/(default)/documents";
 
 
-let currentUser=null;
-let works=[];
+/* =====================================================
+   GLOBAL DATA
+===================================================== */
+
+let currentUser = null;
+let currentProfile = null;
+let works = [];
+let employees = [];
 
 
-const $=id=>
-document.getElementById(id);
+/* =====================================================
+   HELPERS
+===================================================== */
+
+const $ = id => document.getElementById(id);
 
 
-const esc=s=>
-String(s??"").replace(
-/[&<>"']/g,
-m=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[m])
-);
+function esc(value){
+
+  return String(value ?? "")
+    .replace(/[&<>"']/g, m => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[m]));
+
+}
 
 
 function today(){
 
-return new Date()
-.toISOString()
-.slice(0,10);
+  const d = new Date();
+
+  return d.toISOString().slice(0,10);
 
 }
 
 
-function loginEmail(v){
+function statusOf(work){
 
-if(v.includes("@"))
-return v;
+  if(work.status === "Completed"){
+    return "Completed";
+  }
 
-return v.toLowerCase()
-.replace(/[^a-z0-9]/g,"")
-+"@ltf-rcu.local";
+  if(work.due && work.due < today()){
+    return "Overdue";
+  }
 
-}
-
-
-function statusOf(x){
-
-if(x.status==="Completed")
-return "Completed";
-
-if(x.due && x.due<today())
-return "Overdue";
-
-return "Pending";
+  return "Pending";
 
 }
 
 
-/* FIRESTORE VALUE HELPERS */
+function statusClass(status){
 
-function fsString(v){
+  if(status === "Completed"){
+    return "bg";
+  }
 
-return {
-stringValue:String(v??"")
-};
+  if(status === "Overdue"){
+    return "br";
+  }
 
-}
-
-
-function fsBool(v){
-
-return {
-booleanValue:Boolean(v)
-};
+  return "by";
 
 }
 
 
-function fsFields(obj){
+/* =====================================================
+   LOGIN EMAIL
+===================================================== */
 
-const out={};
+function loginEmail(value){
 
-for(const key in obj){
+  value = value.trim();
 
-const value=obj[key];
+  /*
+     अगर पूरा email दिया है तो वही इस्तेमाल होगा.
+     Employee ID दिया गया हो तो उसे local format में
+     convert किया जाएगा.
+  */
 
-if(value===undefined)
-continue;
+  if(value.includes("@")){
+    return value;
+  }
 
-if(typeof value==="boolean"){
-
-out[key]=fsBool(value);
-
-}else{
-
-out[key]=fsString(value);
-
-}
-
-}
-
-return out;
+  return value.toLowerCase()
+    .replace(/[^a-z0-9]/g,"")
+    + "@ltf-rcu.local";
 
 }
 
 
-function readValue(v){
+/* =====================================================
+   FIREBASE AUTH LOGIN
+===================================================== */
 
-if(!v)
-return null;
+async function firebaseLogin(email,password){
 
-if(v.stringValue!==undefined)
-return v.stringValue;
+  const response = await fetch(AUTH_URL,{
 
-if(v.booleanValue!==undefined)
-return v.booleanValue;
+    method:"POST",
 
-if(v.integerValue!==undefined)
-return Number(v.integerValue);
+    headers:{
+      "Content-Type":"application/json"
+    },
 
-if(v.doubleValue!==undefined)
-return Number(v.doubleValue);
+    body:JSON.stringify({
+      email:email,
+      password:password,
+      returnSecureToken:true
+    })
 
-return "";
+  });
+
+
+  const data = await response.json();
+
+
+  if(!response.ok){
+
+    let message = "Login failed";
+
+    if(data.error && data.error.message){
+      message = data.error.message;
+    }
+
+    throw new Error(message);
+
+  }
+
+
+  return data;
 
 }
 
 
-function readDoc(d){
+/* =====================================================
+   FIRESTORE VALUE CONVERTER
+===================================================== */
 
-const obj={
-id:d.name.split("/").pop()
-};
+function firestoreValue(value){
 
-const fields=d.fields||{};
+  if(value === null || value === undefined){
+    return {nullValue:null};
+  }
 
-for(const key in fields){
+  if(typeof value === "string"){
+    return {stringValue:value};
+  }
 
-obj[key]=readValue(fields[key]);
+  if(typeof value === "boolean"){
+    return {booleanValue:value};
+  }
+
+  if(typeof value === "number"){
+
+    if(Number.isInteger(value)){
+      return {integerValue:String(value)};
+    }
+
+    return {doubleValue:value};
+  }
+
+  return {stringValue:String(value)};
 
 }
 
-return obj;
+
+/* =====================================================
+   FIRESTORE DOCUMENT CONVERTER
+===================================================== */
+
+function firestoreFields(data){
+
+  const fields = {};
+
+  Object.keys(data).forEach(key => {
+
+    fields[key] = firestoreValue(data[key]);
+
+  });
+
+  return fields;
 
 }
 
 
-/* FIRESTORE REST */
+function firestoreDocToObject(doc){
+
+  const data = {};
+
+  const fields = doc.fields || {};
+
+  Object.keys(fields).forEach(key => {
+
+    const f = fields[key];
+
+    if(f.stringValue !== undefined){
+      data[key] = f.stringValue;
+    }
+
+    else if(f.integerValue !== undefined){
+      data[key] = Number(f.integerValue);
+    }
+
+    else if(f.doubleValue !== undefined){
+      data[key] = f.doubleValue;
+    }
+
+    else if(f.booleanValue !== undefined){
+      data[key] = f.booleanValue;
+    }
+
+    else if(f.timestampValue !== undefined){
+      data[key] = f.timestampValue;
+    }
+
+    else if(f.nullValue !== undefined){
+      data[key] = null;
+    }
+
+  });
+
+  return data;
+
+}
+
+
+/* =====================================================
+   FIRESTORE GET DOCUMENT
+===================================================== */
 
 async function firestoreGet(path){
 
-const r=
-await fetch(
-FIRESTORE+"/"+path,
-{
-headers:{
-Authorization:
-"Bearer "+currentUser.idToken
-}
-}
-);
+  const response = await fetch(
+    FIRESTORE_BASE + "/" + path,
+    {
+      headers:{
+        "Authorization":"Bearer " + currentUser.idToken
+      }
+    }
+  );
 
 
-if(!r.ok){
-
-const text=await r.text();
-
-throw new Error(
-"Firestore GET "+r.status+": "+text
-);
-
-}
-
-return r.json();
-
-}
+  const data = await response.json();
 
 
-async function firestoreList(collection){
+  if(!response.ok){
 
-const r=
-await fetch(
-FIRESTORE+"/"+collection,
-{
-headers:{
-Authorization:
-"Bearer "+currentUser.idToken
-}
-}
-);
+    throw new Error(
+      data.error?.message || "Firestore read failed"
+    );
+
+  }
 
 
-if(!r.ok){
-
-const text=await r.text();
-
-throw new Error(
-"Firestore LIST "+r.status+": "+text
-);
+  return data;
 
 }
 
 
-const data=await r.json();
+/* =====================================================
+   FIRESTORE LIST COLLECTION
+===================================================== */
 
-return (data.documents||[])
-.map(readDoc);
+async function firestoreList(collectionName){
 
-}
-
-
-/* FIRESTORE QUERY */
-
-async function firestoreQuery(collectionName){
-
-const url=
-FIRESTORE+":runQuery";
-
-
-const body={
-
-structuredQuery:{
-
-from:[
-{
-collectionId:collectionName
-}
-]
-
-}
-
-};
+  const response = await fetch(
+    FIRESTORE_BASE + "/" + collectionName,
+    {
+      headers:{
+        "Authorization":"Bearer " + currentUser.idToken
+      }
+    }
+  );
 
 
-const r=
-await fetch(
-url,
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json",
-
-Authorization:
-"Bearer "+currentUser.idToken
-},
-
-body:JSON.stringify(body)
-}
-);
+  const data = await response.json();
 
 
-if(!r.ok){
+  if(!response.ok){
 
-const text=await r.text();
+    throw new Error(
+      data.error?.message || "Firestore collection read failed"
+    );
 
-throw new Error(
-"Firestore QUERY "+r.status+": "+text
-);
+  }
+
+
+  return data.documents || [];
 
 }
 
 
-const data=await r.json();
+/* =====================================================
+   FIRESTORE ADD DOCUMENT
+===================================================== */
 
-return data
-.filter(x=>x.document)
-.map(x=>readDoc(x.document));
+async function firestoreAdd(collectionName,data){
 
-}
+  const response = await fetch(
+    FIRESTORE_BASE + "/" + collectionName,
+    {
+      method:"POST",
 
+      headers:{
+        "Authorization":"Bearer " + currentUser.idToken,
+        "Content-Type":"application/json"
+      },
 
-/* CREATE */
+      body:JSON.stringify({
+        fields:firestoreFields(data)
+      })
 
-async function firestoreCreate(collectionName,data){
-
-const r=
-await fetch(
-FIRESTORE+"/"+collectionName,
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json",
-
-Authorization:
-"Bearer "+currentUser.idToken
-},
-
-body:JSON.stringify({
-fields:fsFields(data)
-})
-}
-);
+    }
+  );
 
 
-if(!r.ok){
+  const result = await response.json();
 
-const text=await r.text();
 
-throw new Error(
-"CREATE "+r.status+": "+text
-);
+  if(!response.ok){
 
-}
+    throw new Error(
+      result.error?.message || "Firestore add failed"
+    );
 
-return r.json();
+  }
+
+
+  return result;
 
 }
 
 
-/* UPDATE */
+/* =====================================================
+   FIRESTORE UPDATE DOCUMENT
+===================================================== */
 
-async function firestoreUpdate(
-collectionName,
-id,
-data
-){
+async function firestoreUpdate(collectionName,id,data){
 
-const r=
-await fetch(
-FIRESTORE+
-"/"+
-collectionName+
-"/"+
-id+
-"?updateMask.fieldPaths="+
-Object.keys(data).join("&updateMask.fieldPaths="),
+  const fieldNames = Object.keys(data);
 
-{
-method:"PATCH",
-
-headers:{
-"Content-Type":
-"application/json",
-
-Authorization:
-"Bearer "+currentUser.idToken
-},
-
-body:JSON.stringify({
-fields:fsFields(data)
-})
-}
-);
+  const updateMask = fieldNames
+    .map(x => "updateMask.fieldPaths=" + encodeURIComponent(x))
+    .join("&");
 
 
-if(!r.ok){
+  const response = await fetch(
+    FIRESTORE_BASE
+    + "/"
+    + collectionName
+    + "/"
+    + encodeURIComponent(id)
+    + "?"
+    + updateMask,
+    {
+      method:"PATCH",
 
-const text=await r.text();
+      headers:{
+        "Authorization":"Bearer " + currentUser.idToken,
+        "Content-Type":"application/json"
+      },
 
-throw new Error(
-"UPDATE "+r.status+": "+text
-);
+      body:JSON.stringify({
+        fields:firestoreFields(data)
+      })
 
-}
-
-return r.json();
-
-}
-
-
-/* DELETE */
-
-async function firestoreDelete(
-collectionName,
-id
-){
-
-const r=
-await fetch(
-FIRESTORE+
-"/"+
-collectionName+
-"/"+
-id,
-
-{
-method:"DELETE",
-
-headers:{
-Authorization:
-"Bearer "+currentUser.idToken
-}
-}
-);
+    }
+  );
 
 
-if(!r.ok){
+  const result = await response.json();
 
-const text=await r.text();
 
-throw new Error(
-"DELETE "+r.status+": "+text
-);
+  if(!response.ok){
 
-}
+    throw new Error(
+      result.error?.message || "Firestore update failed"
+    );
+
+  }
+
+
+  return result;
 
 }
 
 
-/* LOGIN */
+/* =====================================================
+   FIRESTORE DELETE
+===================================================== */
 
-$("go").onclick=async()=>{
+async function firestoreDelete(collectionName,id){
 
-const err=$("err");
+  const response = await fetch(
+    FIRESTORE_BASE
+    + "/"
+    + collectionName
+    + "/"
+    + encodeURIComponent(id),
+    {
+      method:"DELETE",
 
-err.textContent="";
-
-const email=
-loginEmail(
-$("uid").value.trim()
-);
-
-const password=
-$("pw").value;
-
-
-if(!email||!password){
-
-err.textContent=
-"Email और Password दोनों भरें।";
-
-return;
-
-}
+      headers:{
+        "Authorization":"Bearer " + currentUser.idToken
+      }
+    }
+  );
 
 
-$("go").textContent=
-"Logging in...";
+  if(!response.ok){
 
-$("go").disabled=true;
+    const result = await response.json();
 
+    throw new Error(
+      result.error?.message || "Firestore delete failed"
+    );
 
-try{
-
-const r=
-await fetch(
-AUTH_URL,
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json"
-},
-
-body:JSON.stringify({
-
-email:email,
-
-password:password,
-
-returnSecureToken:true
-
-})
-}
-);
-
-
-const data=
-await r.json();
-
-
-if(!r.ok){
-
-throw new Error(
-data.error?.message||
-"Login failed"
-);
+  }
 
 }
 
 
-currentUser={
+/* =====================================================
+   USER PROFILE
+===================================================== */
 
-uid:data.localId,
+async function loadProfile(){
 
-email:data.email,
+  const doc = await firestoreGet(
+    "users/" + currentUser.localId
+  );
 
-idToken:data.idToken
+  if(!doc || !doc.fields){
 
-};
+    throw new Error(
+      "आपका users profile Firestore में नहीं मिला।"
+    );
 
+  }
 
-await start();
-
-
-}catch(e){
-
-console.error(e);
-
-err.textContent=
-e.message;
-
-
-$("go").textContent=
-"Login";
-
-$("go").disabled=false;
-
-}
-
-};
-
-
-/* START */
-
-async function start(){
-
-try{
-
-const me=
-await firestoreGet(
-"users/"+currentUser.uid
-);
-
-
-const profile=
-readDoc(me);
-
-
-$("login")
-.classList.add("hide");
-
-
-$("main")
-.classList.remove("hide");
-
-
-$("main").innerHTML=
-profile.role==="crm"
-?crmView()
-:employeeView(profile);
-
-
-if(profile.role==="crm"){
-
-await loadCRM();
-
-}else{
-
-await loadEmployee(profile);
+  currentProfile = {
+    uid:currentUser.localId,
+    ...firestoreDocToObject(doc)
+  };
 
 }
 
 
-}catch(e){
-
-console.error(e);
-
-$("err").textContent=
-e.message;
-
-}
-
-}
-
-
-/* CRM VIEW */
+/* =====================================================
+   CRM VIEW
+===================================================== */
 
 function crmView(){
 
-return`
+return `
+
+<div class="topbar">
+
+  <div>
+    <h2>CRM Dashboard</h2>
+    <div class="small">
+      Vishal Singh • Risk Containment Unit
+    </div>
+  </div>
+
+  <button id="logout" class="redbtn" style="width:auto">
+    Logout
+  </button>
+
+</div>
+
 
 <div class="cards">
 
-<div class="card">
-Total Work
-<div class="num blue" id="total">0</div>
-</div>
+  <div class="card">
+    Total Work
+    <div class="num blue" id="total">0</div>
+  </div>
 
-<div class="card">
-Completed
-<div class="num green" id="done">0</div>
-</div>
+  <div class="card">
+    Completed
+    <div class="num green" id="done">0</div>
+  </div>
 
-<div class="card">
-Pending
-<div class="num yellow" id="pending">0</div>
-</div>
+  <div class="card">
+    Pending
+    <div class="num yellow" id="pending">0</div>
+  </div>
 
-<div class="card">
-TAT Crossed
-<div class="num red" id="overdue">0</div>
-</div>
+  <div class="card">
+    TAT Crossed
+    <div class="num red" id="overdue">0</div>
+  </div>
 
 </div>
 
 
 <div class="panel">
 
-<h3>Team</h3>
+<h3>Team Performance</h3>
 
 <table>
 
 <thead>
+
 <tr>
 <th>Name</th>
-<th>Designation</th>
+<th>Employee ID</th>
 <th>Assigned</th>
 <th>Completed</th>
 <th>Pending</th>
+<th>Overdue</th>
 </tr>
+
 </thead>
 
 <tbody id="teamRows"></tbody>
@@ -839,27 +860,29 @@ TAT Crossed
 <div class="grid">
 
 <input
-id="work"
-placeholder="Work / Client / Task"
+ id="work"
+ placeholder="Work / Client / Task"
 >
 
 <select id="member">
-<option value="">Select Employee</option>
+
+<option value="">
+Select Employee
+</option>
+
 </select>
 
-<input id="due" type="date">
-
 <input
-id="email"
-placeholder="Employee Email (optional)"
+ id="due"
+ type="date"
 >
 
 <input
-id="remarks"
-placeholder="Remarks / Instruction"
+ id="remarks"
+ placeholder="Remarks / Instruction"
 >
 
-<button id="assign">
+<button id="assign" class="bluebtn">
 Work Assign करें
 </button>
 
@@ -877,7 +900,11 @@ Work Assign करें
 <div class="grid">
 
 <select id="filterMember">
-<option value="">सभी Team Members</option>
+
+<option value="">
+सभी Team Members
+</option>
+
 </select>
 
 <select id="filterStatus">
@@ -886,15 +913,23 @@ Work Assign करें
 सभी Status
 </option>
 
-<option>Pending</option>
-<option>Completed</option>
-<option>Overdue</option>
+<option value="Pending">
+Pending
+</option>
+
+<option value="Completed">
+Completed
+</option>
+
+<option value="Overdue">
+Overdue
+</option>
 
 </select>
 
 <input
-id="search"
-placeholder="Work / Client Search"
+ id="search"
+ placeholder="Work / Client Search"
 >
 
 </div>
@@ -907,6 +942,7 @@ placeholder="Work / Client Search"
 <tr>
 <th>Work</th>
 <th>Assigned To</th>
+<th>Employee ID</th>
 <th>Due Date</th>
 <th>Remarks</th>
 <th>Status</th>
@@ -921,33 +957,62 @@ placeholder="Work / Client Search"
 
 </div>
 
-<br>
-
-<button id="logout">
-Logout
-</button>
-
 `;
 
 }
 
 
-/* EMPLOYEE VIEW */
+/* =====================================================
+   EMPLOYEE VIEW
+===================================================== */
 
 function employeeView(me){
 
-return`
+return `
 
-<div class="panel">
+<div class="topbar">
+
+<div>
 
 <h2>
-${esc(me.name||"Employee")}
+${esc(me.name || "Employee")}
 </h2>
 
-<p>
+<div class="small">
 Employee ID:
-${esc(me.employeeId||"-")}
-</p>
+${esc(me.employeeId || "-")}
+</div>
+
+</div>
+
+<button id="logout" class="redbtn" style="width:auto">
+Logout
+</button>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+Total
+<div class="num blue" id="empTotal">0</div>
+</div>
+
+<div class="card">
+Completed
+<div class="num green" id="empDone">0</div>
+</div>
+
+<div class="card">
+Pending
+<div class="num yellow" id="empPending">0</div>
+</div>
+
+<div class="card">
+Overdue
+<div class="num red" id="empOverdue">0</div>
+</div>
 
 </div>
 
@@ -964,425 +1029,623 @@ ${esc(me.employeeId||"-")}
 <th>Work</th>
 <th>CRM</th>
 <th>TAT</th>
+<th>Remarks</th>
 <th>Status</th>
 <th>Action</th>
 </tr>
 
 </thead>
 
-<tbody id="rows"></tbody>
+<tbody id="employeeRows"></tbody>
 
 </table>
 
 </div>
 
-<br>
-
-<button id="logout">
-Logout
-</button>
-
 `;
 
 }
 
 
-/* CRM LOAD */
+/* =====================================================
+   LOAD CRM
+===================================================== */
 
 async function loadCRM(){
 
-try{
+  const userDocs =
+    await firestoreList("users");
 
-const employees=
-await firestoreList("users");
-
-
-const emps=
-employees.filter(
-x=>x.role==="employee"
-);
-
-
-$("member").innerHTML=
-emps.length
-
-?
-
-emps.map(x=>
-`<option value="${x.id}">
-${esc(x.name)}
-(${esc(x.employeeId||"")})
-</option>`
-).join("")
-
-:
-
-`<option value="">
-No employee found
-</option>`;
+  employees =
+    userDocs
+      .map(doc => ({
+        uid:doc.name.split("/").pop(),
+        ...firestoreDocToObject(doc)
+      }))
+      .filter(x => x.role === "employee");
 
 
-$("filterMember").innerHTML=
-`<option value="">
-सभी Team Members
-</option>`
-+
-emps.map(x=>
-`<option value="${x.name}">
-${esc(x.name)}
-</option>`
-).join("");
+  works =
+    (await firestoreList("work"))
+      .map(doc => ({
+        id:doc.name.split("/").pop(),
+        ...firestoreDocToObject(doc)
+      }));
 
 
-works=
-await firestoreList("work");
+  populateEmployees();
+
+  drawCRM();
 
 
-drawCRM();
+  $("assign").onclick = assignWork;
 
+  $("filterMember").onchange = drawCRM;
 
-$("assign").onclick=
-async()=>{
+  $("filterStatus").onchange = drawCRM;
 
-try{
+  $("search").oninput = drawCRM;
 
-const emp=
-emps.find(
-x=>x.id===$("member").value
-);
-
-
-if(
-!$("work").value.trim()
-||
-!emp
-||
-!$("due").value
-){
-
-$("crmMsg").textContent=
-"Work, Employee और Due Date जरूरी हैं।";
-
-return;
+  $("logout").onclick = logout;
 
 }
 
 
-await firestoreCreate(
-"work",
-{
+/* =====================================================
+   POPULATE EMPLOYEES
+===================================================== */
 
-work:$("work").value.trim(),
+function populateEmployees(){
 
-assignedUid:emp.id,
+  const member = $("member");
 
-employeeName:emp.name,
+  member.innerHTML =
+    `<option value="">Select Employee</option>`
+    +
+    employees.map(emp => `
 
-employeeId:emp.employeeId||"",
+      <option value="${esc(emp.uid)}">
+        ${esc(emp.name || "Employee")}
+        ${emp.employeeId ? " (" + esc(emp.employeeId) + ")" : ""}
+      </option>
 
-email:$("email").value.trim(),
-
-crmName:"Vishal Singh",
-
-due:$("due").value,
-
-note:$("remarks").value.trim(),
-
-status:"Pending",
-
-createdAt:new Date().toISOString()
-
-}
-);
+    `).join("");
 
 
-$("crmMsg").textContent=
-"Work successfully assigned.";
+  $("filterMember").innerHTML =
+    `<option value="">सभी Team Members</option>`
+    +
+    employees.map(emp => `
 
+      <option value="${esc(emp.name || "")}">
+        ${esc(emp.name || "Employee")}
+      </option>
 
-$("work").value="";
-$("email").value="";
-$("remarks").value="";
-
-
-works=
-await firestoreList("work");
-
-
-drawCRM();
-
-
-}catch(e){
-
-$("crmMsg").textContent=
-e.message;
-
-}
-
-};
-
-
-$("filterMember").onchange=
-drawCRM;
-
-$("filterStatus").onchange=
-drawCRM;
-
-$("search").oninput=
-drawCRM;
-
-
-$("logout").onclick=
-logout;
+    `).join("");
 
 }
 
 
-/* CRM DRAW */
+/* =====================================================
+   ASSIGN WORK
+===================================================== */
+
+async function assignWork(){
+
+  const work = $("work").value.trim();
+
+  const employeeUid =
+    $("member").value;
+
+  const due =
+    $("due").value;
+
+  const remarks =
+    $("remarks").value.trim();
+
+
+  if(!work || !employeeUid || !due){
+
+    $("crmMsg").textContent =
+      "Work, Employee और Due Date जरूरी हैं।";
+
+    $("crmMsg").className = "msg";
+
+    return;
+
+  }
+
+
+  const employee =
+    employees.find(x => x.uid === employeeUid);
+
+
+  if(!employee){
+
+    $("crmMsg").textContent =
+      "Employee नहीं मिला।";
+
+    return;
+
+  }
+
+
+  try{
+
+    $("assign").disabled = true;
+
+    $("assign").textContent =
+      "Assigning...";
+
+
+    await firestoreAdd("work",{
+
+      work:work,
+
+      assignedUid:employee.uid,
+
+      employeeName:
+        employee.name || "Employee",
+
+      employeeId:
+        employee.employeeId || "",
+
+      crmName:
+        currentProfile.name || "Vishal Singh",
+
+      due:due,
+
+      note:remarks,
+
+      status:"Pending"
+
+    });
+
+
+    $("crmMsg").textContent =
+      "✓ Work successfully assigned.";
+
+    $("crmMsg").className =
+      "msg success";
+
+
+    $("work").value = "";
+
+    $("due").value = "";
+
+    $("remarks").value = "";
+
+
+    works =
+      (await firestoreList("work"))
+        .map(doc => ({
+          id:doc.name.split("/").pop(),
+          ...firestoreDocToObject(doc)
+        }));
+
+
+    drawCRM();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    $("crmMsg").textContent =
+      "Error: " + error.message;
+
+    $("crmMsg").className = "msg";
+
+  }
+
+  finally{
+
+    $("assign").disabled = false;
+
+    $("assign").textContent =
+      "Work Assign करें";
+
+  }
+
+}
+
+
+/* =====================================================
+   CRM DRAW
+===================================================== */
 
 function drawCRM(){
 
-$("total").textContent=
-works.length;
+  if(!$("rows")){
+    return;
+  }
 
 
-$("done").textContent=
-works.filter(
-x=>statusOf(x)==="Completed"
-).length;
+  $("total").textContent =
+    works.length;
 
 
-$("pending").textContent=
-works.filter(
-x=>statusOf(x)==="Pending"
-).length;
+  $("done").textContent =
+    works.filter(
+      x => statusOf(x) === "Completed"
+    ).length;
 
 
-$("overdue").textContent=
-works.filter(
-x=>statusOf(x)==="Overdue"
-).length;
+  $("pending").textContent =
+    works.filter(
+      x => statusOf(x) === "Pending"
+    ).length;
 
 
-const members={};
+  $("overdue").textContent =
+    works.filter(
+      x => statusOf(x) === "Overdue"
+    ).length;
 
 
-works.forEach(x=>{
+  /* TEAM */
 
-const n=
-x.employeeName||"Unknown";
-
-
-if(!members[n]){
-
-members[n]={
-assigned:0,
-completed:0,
-pending:0
-};
-
-}
+  const members = {};
 
 
-members[n].assigned++;
+  works.forEach(work => {
+
+    const name =
+      work.employeeName || "Unknown";
 
 
-if(statusOf(x)==="Completed")
-members[n].completed++;
+    if(!members[name]){
+
+      members[name] = {
+
+        employeeId:
+          work.employeeId || "",
+
+        assigned:0,
+
+        completed:0,
+
+        pending:0,
+
+        overdue:0
+
+      };
+
+    }
 
 
-if(statusOf(x)==="Pending")
-members[n].pending++;
-
-});
+    members[name].assigned++;
 
 
-$("teamRows").innerHTML=
-Object.entries(members)
-.map(([name,x])=>
-`<tr>
-<td><b>${esc(name)}</b></td>
-<td>Employee</td>
-<td>${x.assigned}</td>
-<td class="green">${x.completed}</td>
-<td class="yellow">${x.pending}</td>
-</tr>`
-).join("");
+    const status =
+      statusOf(work);
 
 
-const fm=$("filterMember").value;
-const fs=$("filterStatus").value;
-const q=$("search").value.toLowerCase();
+    if(status === "Completed"){
+      members[name].completed++;
+    }
+
+    if(status === "Pending"){
+      members[name].pending++;
+    }
+
+    if(status === "Overdue"){
+      members[name].overdue++;
+    }
+
+  });
 
 
-const list=
-works.filter(x=>
-
-(!fm||
-x.employeeName===fm)
-
-&&
-
-(!fs||
-statusOf(x)===fs)
-
-&&
-
-(!q||
-(
-x.work+" "+
-x.employeeName+" "+
-(x.note||"")
-)
-.toLowerCase()
-.includes(q))
-
-);
-
-
-$("rows").innerHTML=
-list.length
-
-?
-
-list.map(x=>{
-
-const s=
-statusOf(x);
-
-
-const cls=
-s==="Completed"
-?"bg"
-:
-s==="Overdue"
-?"br"
-:
-"by";
-
-
-return`
+  $("teamRows").innerHTML =
+    Object.entries(members)
+      .map(([name,data]) => `
 
 <tr>
 
 <td>
-<b>${esc(x.work)}</b>
+<b>${esc(name)}</b>
 </td>
 
 <td>
-${esc(x.employeeName)}
+${esc(data.employeeId)}
 </td>
 
 <td>
-${esc(x.due)}
+${data.assigned}
+</td>
+
+<td class="green">
+${data.completed}
+</td>
+
+<td class="yellow">
+${data.pending}
+</td>
+
+<td class="red">
+${data.overdue}
+</td>
+
+</tr>
+
+      `)
+      .join("");
+
+
+  /* FILTER */
+
+  const memberFilter =
+    $("filterMember").value;
+
+  const statusFilter =
+    $("filterStatus").value;
+
+  const search =
+    $("search").value
+      .toLowerCase()
+      .trim();
+
+
+  const list =
+    works.filter(work => {
+
+      const matchesMember =
+        !memberFilter ||
+        work.employeeName === memberFilter;
+
+
+      const matchesStatus =
+        !statusFilter ||
+        statusOf(work) === statusFilter;
+
+
+      const text =
+        (
+          (work.work || "") +
+          " " +
+          (work.employeeName || "") +
+          " " +
+          (work.employeeId || "") +
+          " " +
+          (work.note || "")
+        ).toLowerCase();
+
+
+      const matchesSearch =
+        !search ||
+        text.includes(search);
+
+
+      return (
+        matchesMember &&
+        matchesStatus &&
+        matchesSearch
+      );
+
+    });
+
+
+  if(!list.length){
+
+    $("rows").innerHTML = `
+
+<tr>
+<td colspan="7" class="empty">
+अभी कोई work नहीं है।
+</td>
+</tr>
+
+    `;
+
+    return;
+
+  }
+
+
+  $("rows").innerHTML =
+    list.map(work => {
+
+      const status =
+        statusOf(work);
+
+      const cls =
+        statusClass(status);
+
+
+      return `
+
+<tr>
+
+<td>
+<b>${esc(work.work)}</b>
 </td>
 
 <td>
-${esc(x.note||"")}
+${esc(work.employeeName)}
+</td>
+
+<td>
+${esc(work.employeeId || "-")}
+</td>
+
+<td>
+${esc(work.due || "-")}
+</td>
+
+<td>
+${esc(work.note || "-")}
 </td>
 
 <td>
 <span class="badge ${cls}">
-${s}
+${status}
 </span>
 </td>
 
 <td>
 
+<div class="action-buttons">
+
 ${
-s!=="Completed"
+status !== "Completed"
 
 ?
 
-`<button
+`
+
+<button
 class="greenbtn"
-onclick="completeWork('${x.id}')">
+onclick="completeWork('${esc(work.id)}')"
+>
 ✓ Complete
-</button>`
+</button>
+
+`
 
 :
 
-"✓ Done"
+`<span class="badge bg">✓ Done</span>`
+
 }
 
-<br><br>
 
 <button
 class="redbtn"
-onclick="deleteWork('${x.id}')">
+onclick="deleteWork('${esc(work.id)}')"
+>
 Delete
 </button>
+
+</div>
 
 </td>
 
 </tr>
 
-`;
+      `;
 
-}).join("")
-
-:
-
-`<tr>
-<td colspan="6">
-अभी कोई work नहीं है।
-</td>
-</tr>`;
+    }).join("");
 
 }
 
 
-/* EMPLOYEE */
+/* =====================================================
+   LOAD EMPLOYEE
+===================================================== */
 
-async function loadEmployee(me){
+async function loadEmployee(){
 
-works=
-await firestoreQuery("work");
-
-
-works=
-works.filter(
-x=>x.assignedUid===me.id
-);
-
-
-$("rows").innerHTML=
-works.map(x=>{
-
-const s=
-statusOf(x);
+  const allWorks =
+    (await firestoreList("work"))
+      .map(doc => ({
+        id:doc.name.split("/").pop(),
+        ...firestoreDocToObject(doc)
+      }));
 
 
-const cls=
-s==="Completed"
-?"bg"
-:
-s==="Overdue"
-?"br"
-:
-"by";
+  works =
+    allWorks.filter(
+      x =>
+        x.assignedUid === currentUser.localId
+    );
 
 
-return`
+  drawEmployee();
+
+  $("logout").onclick = logout;
+
+}
+
+
+/* =====================================================
+   EMPLOYEE DRAW
+===================================================== */
+
+function drawEmployee(){
+
+  const total =
+    works.length;
+
+
+  const done =
+    works.filter(
+      x => statusOf(x) === "Completed"
+    ).length;
+
+
+  const pending =
+    works.filter(
+      x => statusOf(x) === "Pending"
+    ).length;
+
+
+  const overdue =
+    works.filter(
+      x => statusOf(x) === "Overdue"
+    ).length;
+
+
+  $("empTotal").textContent = total;
+
+  $("empDone").textContent = done;
+
+  $("empPending").textContent = pending;
+
+  $("empOverdue").textContent = overdue;
+
+
+  if(!works.length){
+
+    $("employeeRows").innerHTML = `
+
+<tr>
+<td colspan="6" class="empty">
+आपको अभी कोई work assign नहीं हुआ है।
+</td>
+</tr>
+
+    `;
+
+    return;
+
+  }
+
+
+  $("employeeRows").innerHTML =
+    works.map(work => {
+
+      const status =
+        statusOf(work);
+
+      const cls =
+        statusClass(status);
+
+
+      return `
 
 <tr>
 
 <td>
-${esc(x.work)}
+<b>${esc(work.work)}</b>
 </td>
 
 <td>
-${esc(x.crmName||"Vishal Singh")}
+${esc(work.crmName || "Vishal Singh")}
 </td>
 
 <td>
-${esc(x.due)}
+${esc(work.due || "-")}
+</td>
+
+<td>
+${esc(work.note || "-")}
 </td>
 
 <td>
 
 <span class="badge ${cls}">
-${s}
+${status}
 </span>
 
 </td>
@@ -1390,103 +1653,336 @@ ${s}
 <td>
 
 ${
-s!=="Completed"
+status !== "Completed"
 
 ?
 
-`<button
+`
+
+<button
 class="greenbtn"
-onclick="completeWork('${x.id}')">
+onclick="completeWork('${esc(work.id)}')"
+>
 ✓ Complete
-</button>`
+</button>
+
+`
 
 :
 
-"✓ Done"
+`<span class="badge bg">✓ Done</span>`
+
 }
 
 </td>
 
 </tr>
 
-`;
+      `;
 
-}).join("");
-
-
-$("logout").onclick=
-logout;
+    }).join("");
 
 }
 
 
-/* COMPLETE */
+/* =====================================================
+   COMPLETE WORK
+===================================================== */
 
-window.completeWork=
-async id=>{
+window.completeWork = async function(id){
 
-try{
+  try{
 
-await firestoreUpdate(
-"work",
-id,
-{
-status:"Completed",
-completedAt:new Date().toISOString()
-}
-);
-
-
-location.reload();
+    await firestoreUpdate(
+      "work",
+      id,
+      {
+        status:"Completed"
+      }
+    );
 
 
-}catch(e){
+    if(currentProfile.role === "crm"){
 
-alert(e.message);
+      works =
+        (await firestoreList("work"))
+          .map(doc => ({
+            id:doc.name.split("/").pop(),
+            ...firestoreDocToObject(doc)
+          }));
 
-}
+      drawCRM();
+
+    }
+
+    else{
+
+      works =
+        (await firestoreList("work"))
+          .map(doc => ({
+            id:doc.name.split("/").pop(),
+            ...firestoreDocToObject(doc)
+          }))
+          .filter(
+            x => x.assignedUid === currentUser.localId
+          );
+
+      drawEmployee();
+
+    }
+
+  }
+
+  catch(error){
+
+    alert(
+      "Complete करने में error: "
+      + error.message
+    );
+
+  }
 
 };
 
 
-/* DELETE */
+/* =====================================================
+   DELETE WORK
+===================================================== */
 
-window.deleteWork=
-async id=>{
+window.deleteWork = async function(id){
 
-if(!confirm("यह work delete करें?"))
-return;
-
-
-try{
-
-await firestoreDelete(
-"work",
-id
-);
+  if(
+    !confirm("क्या आप यह work delete करना चाहते हैं?")
+  ){
+    return;
+  }
 
 
-location.reload();
+  try{
+
+    await firestoreDelete(
+      "work",
+      id
+    );
 
 
-}catch(e){
+    works =
+      (await firestoreList("work"))
+        .map(doc => ({
+          id:doc.name.split("/").pop(),
+          ...firestoreDocToObject(doc)
+        }));
 
-alert(e.message);
 
-}
+    if(currentProfile.role === "crm"){
+
+      drawCRM();
+
+    }
+
+    else{
+
+      works =
+        works.filter(
+          x =>
+            x.assignedUid ===
+            currentUser.localId
+        );
+
+      drawEmployee();
+
+    }
+
+  }
+
+  catch(error){
+
+    alert(
+      "Delete करने में error: "
+      + error.message
+    );
+
+  }
 
 };
 
 
-/* LOGOUT */
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 function logout(){
 
-currentUser=null;
+  currentUser = null;
 
-location.reload();
+  currentProfile = null;
+
+  works = [];
+
+  employees = [];
+
+
+  $("main").innerHTML = "";
+
+  $("main").classList.add("hide");
+
+  $("login").classList.remove("hide");
+
+  $("uid").value = "";
+
+  $("pw").value = "";
+
+  $("err").textContent = "";
 
 }
+
+
+/* =====================================================
+   START APPLICATION
+===================================================== */
+
+async function startApp(){
+
+  try{
+
+    $("login").classList.add("hide");
+
+    $("main").classList.remove("hide");
+
+    $("main").innerHTML = `
+
+      <div class="card">
+        <h3>Loading...</h3>
+        <p>Firebase data load हो रहा है...</p>
+      </div>
+
+    `;
+
+
+    await loadProfile();
+
+
+    if(
+      currentProfile.role === "crm"
+    ){
+
+      $("main").innerHTML =
+        crmView();
+
+      await loadCRM();
+
+    }
+
+    else{
+
+      $("main").innerHTML =
+        employeeView(currentProfile);
+
+      await loadEmployee();
+
+    }
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    $("main").classList.add("hide");
+
+    $("login").classList.remove("hide");
+
+    $("err").textContent =
+      "Error: " + error.message;
+
+  }
+
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+$("go").onclick = async function(){
+
+  const email =
+    $("uid").value.trim();
+
+  const password =
+    $("pw").value;
+
+
+  $("err").textContent = "";
+
+
+  if(!email || !password){
+
+    $("err").textContent =
+      "Email और Password दोनों भरें।";
+
+    return;
+
+  }
+
+
+  try{
+
+    $("go").disabled = true;
+
+    $("go").textContent =
+      "Logging in...";
+
+
+    const result =
+      await firebaseLogin(
+        loginEmail(email),
+        password
+      );
+
+
+    currentUser = result;
+
+
+    await startApp();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    $("err").textContent =
+      "Login failed: "
+      + error.message;
+
+
+    $("go").disabled = false;
+
+    $("go").textContent =
+      "Login";
+
+  }
+
+};
+
+
+/* =====================================================
+   ENTER KEY LOGIN
+===================================================== */
+
+$("pw").addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      $("go").click();
+
+    }
+
+  }
+);
 
 </script>
 
